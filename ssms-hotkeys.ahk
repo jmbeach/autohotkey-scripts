@@ -1,6 +1,7 @@
 SetTitleMatchMode, REGEX
 
-#IfWinActive, Microsoft SQL Server Management Studio$
+if !WinActive("Microsoft SQL Server Management Studio") or !WinActive("Azure Data Studio")
+    return
 
 ; your hotstrings go here
 ^+t:: Send, declare @t varchar(200) = '<transaction name>' {enter}begin tran @t {enter}{enter}rollback tran @t
