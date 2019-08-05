@@ -1,3 +1,12 @@
 ; Shift + Wheel for horizontal scrolling
-+WheelDown::WheelRight
-+WheelUp::WheelLeft
++WheelDown::
+Send {WheelRight}
+Send {WheelRight}
+Send {WheelRight}
+return
+
++WheelUp::
+Send {WheelLeft}
+Send {WheelLeft}
+Send {WheelLeft}
+return
