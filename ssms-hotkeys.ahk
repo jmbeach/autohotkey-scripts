@@ -1,9 +1,12 @@
-SetTitleMatchMode, REGEX
+; #Include, debug.ahk
 
-if !WinActive("Microsoft SQL Server Management Studio") or !WinActive("Azure Data Studio")
-    return
+; If ssms is active and ctrl + e is pressed, run the refresh label
+Hotkey, IfWinActive, ahk_exe Ssms.exe
+Hotkey, ^e, refresh
+return
 
-; your hotstrings go here
-^+t:: Send, declare @t varchar(200) = '<transaction name>' {enter}begin tran @t {enter}{enter}rollback tran @t
-; kill connections
-^+k:: Send, USE [master]{enter}DECLARE @kill varchar(8000) = ''{enter}SELECT @kill = @kill {+} 'kill ' {+} CONVERT(varchar(5), session_id){enter}FROM sys.dm_exec_sessions{enter}WHERE database_id  = db_id('MyDB'){enter}EXEC(@kill);
+refresh:
+Send {f5}
+Sleep 100
+Send ^r
+return
