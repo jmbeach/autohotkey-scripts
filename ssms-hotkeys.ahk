@@ -14,7 +14,7 @@ Send ^r
 return
 
 transaction_hotkey:
-Send, declare @t varchar(200) = '<transaction name>' {enter}begin tran @t {enter}{enter}rollback tran @t
+Send, DECLARE @t VARCHAR(200) = '<transaction name>';{enter}BEGIN TRAN @t;{enter}{enter}ROLLBACK TRAN @t;
 return
 
 ; kill connections
