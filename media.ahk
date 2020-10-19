@@ -1,0 +1,3 @@
+#n:: Run, pwsh -WindowStyle Hidden -NoProfile -C . C:\Users\JBeach\private-custom-scripts\cmus.ps1; Next-CmusSong;, %WorkingDir%, Hide
+#p:: Run, pwsh -WindowStyle Hidden -NoProfile -C . C:\Users\JBeach\private-custom-scripts\cmus.ps1; Prev-CmusSong;, %WorkingDir%, Hide
+#Space:: Run, pwsh -WindowStyle Hidden -NoProfile -C . C:\Users\JBeach\private-custom-scripts\cmus.ps1; Pause-CmusSong;, %WorkingDir%, Hide
