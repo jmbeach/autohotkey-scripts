@@ -1,6 +1,6 @@
 #+L::
-  if WinActive("ahk_exe Code.exe")
-    WinMove, A,, 72, 10, 1535, 880
+  if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
+    WinMove, A,, 73, 10, 1535, 880
   else
     WinMove, A,, 65, 10, 1550, 880
   return
