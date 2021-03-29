@@ -1,4 +1,4 @@
-; Win + Shift + U to move window to upper position
+﻿; Win + Shift + U to move window to upper position
 #+U::
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
     WinMove, A,, 73, 10, 1535, 880
