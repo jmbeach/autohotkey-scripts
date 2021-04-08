@@ -34,3 +34,19 @@
     ; otherwize, maximize it
     WinMaximize, A
   return
+
+; Win + Shift + H to move window to top left position
+#+H::
+  if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
+    WinMove, A,, 73, 10, 918, 880
+  else
+    WinMove, A,, 65, 10, 926, 880
+ return
+
+; Win + Shift + L to move window to top right position
+#+L::
+  if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
+    WinMove, A,, 989, 10, 918, 880
+  else
+    WinMove, A,, 988, 10, 926, 880
+ return
