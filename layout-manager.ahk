@@ -9,9 +9,9 @@
 ; Win + U to move window to full upper position
 #U::
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
-    WinMove, A,, 73, 10, 1836, 880
+    WinMove, A,, 73, 10, 2480, 1180
   else
-    WinMove, A,, 65, 10, 1852, 880
+    WinMove, A,, 65, 10, 2496, 1180
  return
 
 ; Win + Shift + R to move window to right position
@@ -21,7 +21,7 @@
 #+B:: WinMove, A,, 65, 800, 1550, 277
 
 ; Win + B to move window to wide bottom position
-#B:: WinMove, A,, 65, 800, 1852, 277
+#B:: WinMove, A,, 65, 1160, 2496, 277
 
 ; Win + F to toggle maximized
 #F::
