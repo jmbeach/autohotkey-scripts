@@ -1,12 +1,13 @@
 ﻿; Win + Shift + U to move window to upper position
+SysGet, Mon1, Monitor, 1
 #+U::
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
-    WinMove, A,, 73, 10, 1535, 880
+    WinMove, A,, 19, 10, Mon1Right - 30, Mon1Bottom - 100
   else
-    WinMove, A,, 65, 10, 1550, 880
+    WinMove, A,, 10, 10, Mon1Right - 10, Mon1Bottom - 90
   return
 
-; Win + U to move window to full upper position
+; Win + U to move window to half upper position
 #U::
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
     WinMove, A,, 73, 10, 2480, 1180
