@@ -38,18 +38,18 @@ SysGet, Mon1, Monitor, 1
     WinMaximize, A
   return
 
-; Win + Shift + H to move window to top left position
+; Win + Shift + H to move window to left position
 #+H::
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
-    WinMove, A,, 73, 10, 918, 880
+    WinMove, A,, 19, 10, (Mon1Right / 2) - 30, Mon1Bottom - 100
   else
-    WinMove, A,, 65, 10, 926, 880
+    WinMove, A,, 19, 10, (Mon1Right / 2) - 30, Mon1Bottom - 90
  return
 
-; Win + Shift + L to move window to top right position
+; Win + Shift + L to move window to right position
 #+L::
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
-    WinMove, A,, 989, 10, 918, 880
+    WinMove, A,, (Mon1Right / 2) + 10, 10, Mon1Right - 30 - (Mon1Right / 2), Mon1Bottom - 100
   else
-    WinMove, A,, 988, 10, 926, 880
- return
+    WinMove, A,, (Mon1Right / 2) + 10, 10, Mon1Right - 10 - (Mon1Right / 2), Mon1Bottom - 90
+  return
