@@ -36,5 +36,5 @@ SysGet, Mon1, Monitor, 1
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
     WinMove, A,, (Mon1Right / 2) + 10, 10, Mon1Right - 35 - (Mon1Right / 2), Mon1Bottom - 100
   else
-    WinMove, A,, (Mon1Right / 2) + 10, 10, Mon1Right - 10 - (Mon1Right / 2), Mon1Bottom - 90
+    WinMove, A,, (Mon1Right / 2) + 10, 10, Mon1Right - 20 - (Mon1Right / 2), Mon1Bottom - 90
   return
