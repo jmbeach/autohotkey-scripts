@@ -15,6 +15,11 @@ SysGet, Mon1, Monitor, 1
     WinMove, A,, 10, 10, Mon1Right - 10, (Mon1Bottom / 1.5) - 90
  return
 
+#+C::
+  WinGetActiveStats, WinTitle, WinWidth, WinHeight, WinX, WinY
+  WinMove, A,, (Mon1Right - WinWidth) / 2, (Mon1Bottom - WinHeight) / 2, WinWidth, WinHeight
+  return
+
 ; Win + B to move window to wide bottom position
 #B::
   if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
