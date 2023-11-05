@@ -1,3 +1,0 @@
-LWin & n:: Run, pwsh -WindowStyle Hidden -NoProfile -C ". $env:USERPROFILE\custom-scripts\ssh.ps1; . $env:USERPROFILE\private-custom-scripts\cmus.ps1; Next-CmusSong;", %WorkingDir%, Hide
-LWin & p:: Run, pwsh -WindowStyle Hidden -NoProfile -C ". $env:USERPROFILE\custom-scripts\ssh.ps1; . $env:USERPROFILE\private-custom-scripts\cmus.ps1; Prev-CmusSong;", %WorkingDir%, Hide
-LWin & Space:: Run, pwsh -WindowStyle Hidden -NoProfile -C ". $env:USERPROFILE\custom-scripts\ssh.ps1; . $env:USERPROFILE\private-custom-scripts\cmus.ps1; Pause-CmusSong;", %WorkingDir%, Hide
