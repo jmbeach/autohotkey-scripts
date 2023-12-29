@@ -15,6 +15,7 @@ SysGet, Mon1, Monitor, 1
     WinMove, A,, 10, 10, Mon1Right - 10, (Mon1Bottom / 1.5) - 90
  return
 
+; Center the active window
 #+C::
   WinGetActiveStats, WinTitle, WinWidth, WinHeight, WinX, WinY
   WinMove, A,, (Mon1Right - WinWidth) / 2, (Mon1Bottom - WinHeight) / 2, WinWidth, WinHeight
@@ -46,7 +47,8 @@ SysGet, Mon1, Monitor, 1
 
 ; Win + Shift + Alt + L to move window to the top right position
 #+!L::
-  WinMove, A,, (Mon1Right / 2) + 10, 10, Mon1Right - 20 - (Mon1Right / 2), (Mon1Bottom / 2) - 90
+  WinGetActiveStats, WinTitle, WinWidth, WinHeight, WinX, WinY
+  WinMove, A,, Mon1Right - WinWidth - 10, 10
   return
 
 ; Win + Shift + Ctrl + L to move window to the bottom right position
