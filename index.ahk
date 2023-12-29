@@ -6,5 +6,4 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 
 #Include %A_ScriptDir%\src\layout-manager.ahk
 #Include %A_ScriptDir%\src\launcher.ahk
-#Include %A_ScriptDir%\src\calculator.ahk
 return

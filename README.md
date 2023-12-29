@@ -5,6 +5,8 @@
 
 The index files just import all the other scripts that I want to use on a regular basis. That way, I only see two AutoHotkey symbols in my system tray and not a bunch.
 
+I associate `.ahk` files with Autohotkey version 1 and I associate the extension `.ah2` with Autohotkey version 2 in Windows. Then I create shortcuts to the index files and place them in my user startup folder so that they are available at startup.
+
 ---
 
 ## [Layout Manager](./src/layout-manager.ahk) / [Layout Manager V2](./src/layout-manager.ah2)
@@ -24,3 +26,23 @@ This script makes it easy to move windows around to fixed positions on the scree
 | `Win + Shift + Alt + H` | Snaps the active window the upper left corner of the screen. The choice of `H` is Vim-inspired. Useful combo is to use `Win + Shift + Ctrl + C` to make a window take up a quarter of the screen and then use another shortcut to snap it to a corner. |
 | `Win + Shift + Ctrl + H` | Moves the active window to the bottom left corner of the screen. The choice of `H` is Vim-inspired. Useful combo is to use `Win + Shift + Ctrl + H` to make a window take up a quarter of the screen and then use another shortcut to snap it to a corner. |
 | `Win + Shift + Ctrl + C` | Centers the active window on the screen and shrinks it to take up a quarter of the screen. Useful combo is to do this and then use another shortcut like `Win + Shift + Alt + L` to snap the screen to the upper right quarter of the screen.  |
+
+---
+
+## [Launcher](./src/launcher.ahk) 🚀
+
+The launcher script is for launching commonly used programs using hotkeys.
+
+| Key binding | Description |
+| --- | --- |
+| `Win + Enter` |  Launches the terminal |
+| `Win + C` | 🧮 Launches calculator app |
+
+
+---
+
+## [Desktop Switcher](./src/desktop-switcher.ah2)
+
+This script comes from [VirtualDesktopAccessor](https://github.com/Ciantic/VirtualDesktopAccessor). I built the VirtualDesktopAccessor DLL and include it under `/src`.
+
+Press `Win + <number>` 0 - 9 to switch to that desktop (0 is actually 10 here since it's furthest right on the keyboard. 1 = 1, ..., 9 = 9, 0 = 10).
