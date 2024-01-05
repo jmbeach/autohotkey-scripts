@@ -160,5 +160,8 @@ endsWith(Haystack, Needle)
 
 focusTheForemostWindow(targetDesktop) {
     foremostWindowId := getForemostWindowIdOnDesktop(targetDesktop)
+    if (!foremostWindowId) {
+        return
+    }
     WinActivate(foremostWindowId)
 }
