@@ -63,6 +63,7 @@ GoToNextDesktop() {
 GoToDesktopNumber(num) {
     global GoToDesktopNumberProc
     DllCall(GoToDesktopNumberProc, "Int", num, "Int")
+    focusTheForemostWindow(num)
     return
 }
 MoveOrGotoDesktopNumber(num) {
@@ -125,3 +126,39 @@ OnChangeDesktop(wParam, lParam, msg, hwnd) {
 #8::MoveOrGotoDesktopNumber(7)
 #9::MoveOrGotoDesktopNumber(8)
 #0::MoveOrGotoDesktopNumber(9)
+
+
+getForemostWindowIdOnDesktop(n)
+{
+    n := n - 1 ; Desktops start at 0, while in script it's 1
+
+    ; winIDList contains a list of windows IDs ordered from the top to the bottom for each desktop.
+    winIDList := WinGetList()
+    for windowID in winIDList {
+        ; Select the first (and foremost) window which is in the specified desktop.
+        if (isWindowVisible(windowID)) {
+            return windowID
+        }
+    }
+}
+
+isWindowVisible(id)
+{
+    WinGetPos &X, &Y, &Height, &Width, id
+    title := WinGetTitle(id)
+    Style  := WinGetStyle(id)
+    ProcsName := WinGetProcessName(id)
+    ; Is Maximized?
+    MMX := WinGetMinMax(id)
+    return (Style & 0xC00000) != 0 && title != "" && endsWith(ProcsName, ".exe") && Height >= 0 && Width >= 0 && X >= 0 && Y >=0 && MMX != -1
+}
+
+endsWith(Haystack, Needle)
+{
+    return InStr(Haystack, Needle, 1) = StrLen(Haystack) - StrLen(Needle) + 1
+}
+
+focusTheForemostWindow(targetDesktop) {
+    foremostWindowId := getForemostWindowIdOnDesktop(targetDesktop)
+    WinActivate(foremostWindowId)
+}
