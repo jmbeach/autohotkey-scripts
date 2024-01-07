@@ -46,3 +46,13 @@ The launcher script is for launching commonly used programs using hotkeys.
 This script comes from [VirtualDesktopAccessor](https://github.com/Ciantic/VirtualDesktopAccessor). I built the VirtualDesktopAccessor DLL and include it under `/src`.
 
 Press `Win + <number>` 0 - 9 to switch to that desktop (0 is actually 10 here since it's furthest right on the keyboard. 1 = 1, ..., 9 = 9, 0 = 10).
+
+---
+
+## [Other](./src/other.ah2)
+
+This script has more miscellaneous utilities.
+
+| Key binding | Description |
+| --- | --- |
+| `Win + F` | Do nothing. This disables the Windows feedback hub shortcut |
