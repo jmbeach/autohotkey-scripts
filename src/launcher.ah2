@@ -5,6 +5,5 @@ KeyHistory 0
 
 ; Open the terminal with windows key and enter
 #Enter:: {
-  localAppData := EnvGet("LOCALAPPDATA")
-  Run  localAppData . "\Microsoft\WindowsApps\wt.exe"
+  Run '"C:\Program Files\Alacritty\alacritty.exe" --working-directory \\wsl$\Ubuntu\home\jared'
 }

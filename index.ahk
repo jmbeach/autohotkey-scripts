@@ -5,5 +5,4 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability
 
 #Include %A_ScriptDir%\src\layout-manager.ahk
-#Include %A_ScriptDir%\src\launcher.ahk
 return
