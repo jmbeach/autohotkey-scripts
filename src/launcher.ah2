@@ -5,5 +5,9 @@ KeyHistory 0
 
 ; Open the terminal with windows key and enter
 #Enter:: {
-  Run '"C:\Program Files\Alacritty\alacritty.exe" --working-directory \\wsl$\Ubuntu\home\jared'
+  Run '"C:\Program Files\Alacritty\alacritty.exe" --working-directory \\wsl$\Ubuntu\home\jared --title Alacritty'
+  if !(WinWait("Alacritty", , 3)) {
+    return
+  }
+  WinActivate("Alacritty")
 }
