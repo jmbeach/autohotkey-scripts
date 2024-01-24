@@ -24,9 +24,19 @@ MonitorGet 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
   WinMove 10 + adjustmentX, 10 + adjustmentY, Mon1Right - 20 - adjustmentWidth, (Mon1Bottom / 1.5) - 90 - adjustmentHeight, "A"
 }
 
+; Win + B to move window to wide bottom position
+#B:: {
+  _getWidthHeightAdjustmentFactor(20, 10, &adjustmentWidth, &adjustmentHeight)
+  _getXYAdjustmentFactor(9, 0, &adjustmentX, &adjustmentY)
+  WinMove 10 + adjustmentX, (Mon1Bottom / 1.6) + 15 + adjustmentY, Mon1Right - 20 - adjustmentWidth, Mon1Bottom - (Mon1Bottom / 1.6) - 90 - adjustmentHeight, "A"
+}
+
+_doesActiveWindowGetAdjustment() {
+  return WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
+}
 
 _getWidthHeightAdjustmentFactor(adjustWidthAmount, adjustHeightAmount, &adjustmentWidth, &adjustmentHeight) {
-  if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe") {
+  if _doesActiveWindowGetAdjustment() {
     adjustmentWidth := adjustWidthAmount
     adjustmentHeight := adjustHeightAmount
   } else{
@@ -36,7 +46,7 @@ _getWidthHeightAdjustmentFactor(adjustWidthAmount, adjustHeightAmount, &adjustme
 }
 
 _getXYAdjustmentFactor(adjustXAmount, adjustYAmount, &adjustmentX, &adjustmentY) {
-  if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe") {
+  if _doesActiveWindowGetAdjustment() {
     adjustmentX := adjustXAmount
     adjustmentY := adjustYAmount
   } else{
