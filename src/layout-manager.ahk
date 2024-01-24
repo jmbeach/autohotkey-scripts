@@ -7,13 +7,6 @@ SysGet, Mon1, Monitor, 1
     WinMove, A,, 10, 10, Mon1Right - 20, Mon1Bottom - 90
   return
 
-; Win + U to move window to half upper position
-#U::
-  if WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
-    WinMove, A,, 10, 10, Mon1Right - 35, (Mon1Bottom / 1.5) - 100
-  else
-    WinMove, A,, 10, 10, Mon1Right - 10, (Mon1Bottom / 1.5) - 90
- return
 
 ; Center the active window
 #+C::
