@@ -144,7 +144,7 @@ getForemostWindowIdOnDesktop(n)
 
 isWindowVisible(id)
 {
-    WinGetPos &X, &Y, &Height, &Width, id
+    WinGetPos &X, &Y, &Width, &Height, id
     title := WinGetTitle(id)
     Style  := WinGetStyle(id)
     ProcsName := WinGetProcessName(id)

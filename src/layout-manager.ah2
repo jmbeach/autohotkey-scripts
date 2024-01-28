@@ -3,6 +3,12 @@ SetWorkingDir(A_ScriptDir)
 
 MonitorGet 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
 
+; Center the active window
+#+C:: {
+  WinGetPos &X, &Y, &Width, &Height, "A"
+  WinMove (Mon1Right - Width) / 2, (Mon1Bottom - Height) / 2, Width, Height, "A"
+}
+
 ; Center the active window and shrink it to a quarter of the screen size
 #+^c:: {
   _getWidthHeightAdjustmentFactor(15, 10, &adjustmentWidth, &adjustmentHeight)

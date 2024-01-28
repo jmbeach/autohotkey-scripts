@@ -1,10 +1,5 @@
 ﻿SysGet, Mon1, Monitor, 1
 
-; Center the active window
-#+C::
-  WinGetActiveStats, WinTitle, WinWidth, WinHeight, WinX, WinY
-  WinMove, A,, (Mon1Right - WinWidth) / 2, (Mon1Bottom - WinHeight) / 2, WinWidth, WinHeight
-  return
 
 ; Win + Shift + H to move window to left position
 #+H::
