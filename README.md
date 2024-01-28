@@ -55,7 +55,8 @@ This script has more miscellaneous utilities.
 
 | Key binding | Description |
 | --- | --- |
-| `Win + F` | Do nothing. This disables the Windows feedback hub shortcut |
+| `Win + F` | Performs ctrl + f. This disables the Windows feedback hub shortcut |
+| Win + C | Performs ctrl + c. This disables the Teams shortcut |
 | `Capslock` | Sends the down arrow key. This is especially useful with context menus to quickly cycle through options without needing the mouse. |
 | `Shift + Capslock` | Sends the up arrow key. This is especially useful with context menus to quickly cycle through options without needing the mouse. |
 

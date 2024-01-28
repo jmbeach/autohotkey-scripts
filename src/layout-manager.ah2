@@ -1,5 +1,4 @@
 #SingleInstance force
-; AutoHotkey v2 script
 SetWorkingDir(A_ScriptDir)
 
 MonitorGet 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
@@ -21,14 +20,21 @@ MonitorGet 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
 #U:: {
   _getWidthHeightAdjustmentFactor(20, 10, &adjustmentWidth, &adjustmentHeight)
   _getXYAdjustmentFactor(10, 0, &adjustmentX, &adjustmentY)
-  WinMove 10 + adjustmentX, 10 + adjustmentY, Mon1Right - 20 - adjustmentWidth, (Mon1Bottom / 1.5) - 90 - adjustmentHeight, "A"
+  WinMove 10 + adjustmentX, 15 + adjustmentY, Mon1Right - 20 - adjustmentWidth, (Mon1Bottom / 1.5) - 30 - adjustmentHeight, "A"
+}
+
+; Win + Shift + U to make window essentially maximized, but with margins
+#+U:: {
+  _getWidthHeightAdjustmentFactor(15, 10, &adjustmentWidth, &adjustmentHeight)
+  _getXYAdjustmentFactor(9, 0, &adjustmentX, &adjustmentY)
+  WinMove 10 + adjustmentX, 15 + adjustmentY, Mon1Right - 20 - adjustmentWidth, Mon1Bottom - 30 - adjustmentHeight, "A"
 }
 
 ; Win + B to move window to wide bottom position
 #B:: {
   _getWidthHeightAdjustmentFactor(20, 10, &adjustmentWidth, &adjustmentHeight)
   _getXYAdjustmentFactor(9, 0, &adjustmentX, &adjustmentY)
-  WinMove 10 + adjustmentX, (Mon1Bottom / 1.6) + 15 + adjustmentY, Mon1Right - 20 - adjustmentWidth, Mon1Bottom - (Mon1Bottom / 1.6) - 90 - adjustmentHeight, "A"
+  WinMove 10 + adjustmentX, (Mon1Bottom / 1.6) + 15 + adjustmentY, Mon1Right - 20 - adjustmentWidth, Mon1Bottom - (Mon1Bottom / 1.6) - 30 - adjustmentHeight, "A"
 }
 
 _doesActiveWindowGetAdjustment() {
