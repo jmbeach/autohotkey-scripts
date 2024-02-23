@@ -8,8 +8,16 @@ SetWorkingDir(A_ScriptDir)
 ; Disable teams hotkey. Makes windows key + c perform ctrl + c
 #c::^c
 
-; Disable widgets hotkey. Makes windows key + w perform ctrl + w
-#w::^w
+; Disable widgets hotkey. Makes windows key + w perform ctrl + w in most cases
+; In some cases, sends Alt + F4
+#w::
+{
+  if _doesActiveWindowGetClosed() {
+    Send "{Alt down}{F4}{Alt up}"
+  } else {
+    Send "^w"
+  }
+}
 
 ; This isn't a hotkey, but just a reminder. If you want to disable Microsoft Office 365 shortcut,
 ; you can't do it with autohotkey. You can set the registry key
@@ -24,4 +32,14 @@ CapsLock::
 +CapsLock::
 {
   Send "{Up}"
+}
+
+_doesActiveWindowGetClosed() {
+  windowsToClose := ["ahk_exe alacritty.exe"]
+  for index, window in windowsToClose {
+    if WinActive(window) {
+      return true
+    }
+  }
+  return false
 }
