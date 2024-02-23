@@ -36,6 +36,20 @@ MonitorGet 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
   WinMove 10 + adjustmentX, 15 + adjustmentY, Mon1Right - 20 - adjustmentWidth, Mon1Bottom - 30 - adjustmentHeight, "A"
 }
 
+; Win + Shift + H to move window to left position
+#+H:: {
+  _getWidthHeightAdjustmentFactor(15, 10, &adjustmentWidth, &adjustmentHeight)
+  _getXYAdjustmentFactor(9, 0, &adjustmentX, &adjustmentY)
+  WinMove 10 + adjustmentX, 15 + adjustmentY, (Mon1Right / 2) - 10 - adjustmentWidth, Mon1Bottom - 30 - adjustmentHeight, "A"
+}
+
+; Win + Shift + L to move window to right position
+#+L:: {
+  _getWidthHeightAdjustmentFactor(15, 10, &adjustmentWidth, &adjustmentHeight)
+  _getXYAdjustmentFactor(9, 0, &adjustmentX, &adjustmentY)
+  WinMove (Mon1Right / 2) + 5 + adjustmentX, 15 + adjustmentY, (Mon1Right / 2) - 10 - adjustmentWidth, Mon1Bottom - 30 - adjustmentHeight, "A"
+}
+
 ; Win + B to move window to wide bottom position
 #B:: {
   _getWidthHeightAdjustmentFactor(20, 10, &adjustmentWidth, &adjustmentHeight)
@@ -44,7 +58,13 @@ MonitorGet 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
 }
 
 _doesActiveWindowGetAdjustment() {
-  return WinActive("ahk_exe Code.exe") or WinActive("ahk_exe azuredatastudio.exe")
+  windowsToAdjust := ["ahk_exe Code.exe", "ahk_exe azuredatastudio.exe", "ahk_exe FoxitPDFReader.exe"]
+  for index, window in windowsToAdjust {
+    if WinActive(window) {
+      return true
+    }
+  }
+  return false
 }
 
 _getWidthHeightAdjustmentFactor(adjustWidthAmount, adjustHeightAmount, &adjustmentWidth, &adjustmentHeight) {
