@@ -8,6 +8,9 @@ SetWorkingDir(A_ScriptDir)
 ; Disable teams hotkey. Makes windows key + c perform ctrl + c
 #c::^c
 
+; Disable widgets hotkey. Makes windows key + w perform ctrl + w
+#w::^w
+
 ; This isn't a hotkey, but just a reminder. If you want to disable Microsoft Office 365 shortcut,
 ; you can't do it with autohotkey. You can set the registry key
 ; "HKEY_CURRENT_USER > Software > Classes > ms-officeapp > Shell > Open > Command" to "rundll32"
