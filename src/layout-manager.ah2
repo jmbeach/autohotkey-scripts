@@ -1,7 +1,7 @@
 #SingleInstance force
 SetWorkingDir(A_ScriptDir)
 
-MonitorGet 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
+MonitorGetWorkArea 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
 
 ; Center the active window
 #+C:: {
