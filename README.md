@@ -59,4 +59,5 @@ This script has more miscellaneous utilities.
 | Win + C | Performs ctrl + c. This disables the Teams shortcut |
 | `Capslock` | Sends the down arrow key. This is especially useful with context menus to quickly cycle through options without needing the mouse. |
 | `Shift + Capslock` | Sends the up arrow key. This is especially useful with context menus to quickly cycle through options without needing the mouse. |
+| Win + , | Opens the preferences window in some applications |
 
