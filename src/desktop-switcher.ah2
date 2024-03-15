@@ -73,6 +73,8 @@ MoveOrGotoDesktopNumber(num) {
     } else {
         GoToDesktopNumber(num)
     }
+    ; Prevent the start menu from appearing
+    Send "{Blind}{vk07}"
     return
 }
 GetDesktopName(num) {
