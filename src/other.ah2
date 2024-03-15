@@ -13,7 +13,7 @@ SetWorkingDir(A_ScriptDir)
 #w::
 {
   if _doesActiveWindowGetClosed() {
-    Send "{Alt down}{F4}{Alt up}"
+    Send "!{F4}"
   } else {
     Send "^w"
   }
@@ -32,6 +32,15 @@ CapsLock::
 +CapsLock::
 {
   Send "{Up}"
+}
+
+; In various programs, use win + , to bring up the settings window
+#,::
+{
+  ; Send ctrl + alt + s in IntelliJ
+  if WinActive("ahk_exe idea64.exe") {
+    Send "^!s"
+  }
 }
 
 _doesActiveWindowGetClosed() {
