@@ -2,6 +2,11 @@
 SetWorkingDir(A_ScriptDir)
 
 MonitorGetWorkArea 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
+; Update the monitor dimensions on a timer
+while true {
+  MonitorGetWorkArea 1, &Mon1Left, &Mon1Top, &Mon1Right, &Mon1Bottom
+  Sleep 5000
+}
 
 ; Center the active window
 #+C:: {
