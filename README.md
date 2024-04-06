@@ -35,7 +35,7 @@ The launcher script is for launching commonly used programs using hotkeys.
 
 | Key binding | Description |
 | --- | --- |
-| `Win + Enter` |  Launches the terminal |
+| `Win + Enter` |  Launches the terminal ([alacritty](https://alacritty.org/) in wsl) |
 | `Win + C` | 🧮 Launches calculator app |
 
 
